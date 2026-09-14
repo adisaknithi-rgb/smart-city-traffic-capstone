@@ -1,0 +1,50 @@
+2026-09-14 13:14:27,615 - __main__ - INFO - ================ Starting Traffic Data Pipeline ================
+2026-09-14 13:14:27,619 - __main__ - ERROR - File loading failed: File not found at 'Metro_Interstate_Traffic_Volume.csv'.
+Traceback (most recent call last):
+  File "D:\AI ML and Data science\smart-city-traffic-capstone\part2_python\pipeline.py", line 43, in load_data
+    df = pd.read_csv(file_path)
+  File "C:\Users\UANG\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\UANG\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\UANG\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\UANG\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ~~~~~~~~~~^
+        f,
+        ^^
+    ...<6 lines>...
+        storage_options=self.options.get("storage_options", None),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\UANG\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+        handle,
+    ...<3 lines>...
+        newline="",
+    )
+FileNotFoundError: [Errno 2] No such file or directory: 'Metro_Interstate_Traffic_Volume.csv'
+2026-09-14 15:19:22,339 - __main__ - INFO - ================ Starting Traffic Data Pipeline ================
+2026-09-14 15:19:22,569 - __main__ - INFO - Successfully loaded raw dataset from 'Metro_Interstate_Traffic_Volume.csv'. Dimensions: 48204 rows, 9 columns.
+2026-09-14 15:19:22,584 - __main__ - ERROR - Schema validation failed. Missing expected columns: ['is_holiday']
+NoneType: None
+2026-09-14 15:24:45,111 - __main__ - INFO - ================ Starting Traffic Data Pipeline ================
+2026-09-14 15:24:45,180 - __main__ - INFO - Successfully loaded raw dataset from 'Metro_Interstate_Traffic_Volume.csv'. Dimensions: 48204 rows, 9 columns.
+2026-09-14 15:24:45,181 - __main__ - ERROR - Schema validation failed. Missing expected columns: ['is_holiday']
+NoneType: None
+2026-09-14 15:26:05,085 - __main__ - INFO - ================ Starting Traffic Data Pipeline ================
+2026-09-14 15:26:05,152 - __main__ - INFO - Successfully loaded raw dataset from 'Metro_Interstate_Traffic_Volume.csv'. Dimensions: 48204 rows, 9 columns.
+2026-09-14 15:26:05,153 - __main__ - INFO - Schema validation passed. All expected columns are present.
+2026-09-14 15:26:05,181 - __main__ - INFO - Standardised categorical column 'weather_main' (stripped whitespace, title-cased).
+2026-09-14 15:26:05,216 - __main__ - INFO - Parsed and validated 'date_time' field into datetime64 format.
+2026-09-14 15:26:05,309 - __main__ - WARNING - Dropped 17 duplicate rows from the dataset. Remaining rows: 48187.
+2026-09-14 15:26:05,317 - __main__ - WARNING - Detected 10 rows with invalid temperature (<200 K / 0 Kelvin anomaly). Imputing by monthly median.
+2026-09-14 15:26:05,350 - __main__ - INFO - Imputed 4 temperature outliers for Month 1 using median value: 266.83 K.
+2026-09-14 15:26:05,352 - __main__ - INFO - Imputed 6 temperature outliers for Month 2 using median value: 266.51 K.
+2026-09-14 15:26:05,362 - __main__ - WARNING - Detected 1 rows with impossible rainfall (>9000 mm). Imputing by monthly median.
+2026-09-14 15:26:05,371 - __main__ - INFO - Imputed 1 rainfall outliers for Month 7 using median value: 0.00 mm.
+2026-09-14 15:26:05,377 - __main__ - INFO - Data cleaning pipeline successfully executed. Final dataset size: 48187 rows.
+2026-09-14 15:26:05,669 - __main__ - INFO - Cleaned dataset exported to 'cleaned_traffic_data.csv'. Pipeline finished successfully.
