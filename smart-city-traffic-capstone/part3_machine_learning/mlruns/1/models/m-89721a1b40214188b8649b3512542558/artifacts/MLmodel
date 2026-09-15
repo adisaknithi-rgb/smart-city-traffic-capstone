@@ -1,0 +1,22 @@
+artifact_path: file:D:/AI ML and Data science/smart-city-traffic-capstone/part3_machine_learning/mlruns/1/models/m-89721a1b40214188b8649b3512542558/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.10
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 3.4.1
+mlflow_version: 3.16.0
+model_id: m-89721a1b40214188b8649b3512542558
+model_size_bytes: 216142
+model_uuid: m-89721a1b40214188b8649b3512542558
+prompts: null
+run_id: 16d1d1d631cd4cbe88b2dcf75ad84843
+utc_time_created: '2026-09-15 17:39:45.273575'

@@ -1,0 +1,22 @@
+2026-09-15 23:27:41,867 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-15 23:27:42,167 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-15 23:27:42,211 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-15 23:27:42,212 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-15 23:27:42,242 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-15 23:27:42,247 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-15 23:27:42,248 | __main__ | INFO | --- Starting Task 2A: K-Means Clustering (K=3) ---
+2026-09-15 23:27:43,162 | __main__ | INFO | K-Means Cluster Summary:
+         traffic_volume        temp  hour_sin  hour_cos  is_low_visibility
+cluster                                                                   
+0           4346.678571  286.138227 -0.813986 -0.126110                0.0
+1           1099.393991  278.714128  0.326355  0.700220                0.0
+2           4755.587878  279.469235  0.461556 -0.687132                0.0
+2026-09-15 23:27:43,163 | __main__ | INFO | --- Starting Task 2B: Association Rule Mining ---
+2026-09-15 23:27:44,001 | __main__ | INFO | Top 5 Association Rules for High/Severe Congestion:
+                                                    antecedents                                                    consequents   support  confidence      lift
+57  frozenset({Time_Slot_Time_MorningPeak, Is_Weekday_Weekday})                      frozenset({Congestion_Congestion_Severe})  0.100303    0.821659  3.289368
+80          frozenset({Time_Slot_Time_Day, Is_Weekday_Weekend})                        frozenset({Congestion_Congestion_High})  0.055724    0.804374  3.214827
+86  frozenset({Is_Weekday_Weekend, Time_Slot_Time_EveningPeak})                        frozenset({Congestion_Congestion_High})  0.033787    0.733003  2.929581
+59                      frozenset({Time_Slot_Time_MorningPeak})  frozenset({Congestion_Congestion_Severe, Is_Weekday_Weekday})  0.100303    0.584897  2.427028
+35                              frozenset({Time_Slot_Time_Day})    frozenset({Congestion_Congestion_High, Is_Weekday_Weekday})  0.086979    0.355652  2.347175
+2026-09-15 23:27:44,002 | __main__ | INFO | Unsupervised Task 2 completed successfully. Audit log saved to logs/unsupervised_models.log

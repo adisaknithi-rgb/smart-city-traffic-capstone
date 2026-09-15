@@ -1,0 +1,13 @@
+2026-09-16 00:49:10,216 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-16 00:49:10,529 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-16 00:49:10,578 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-16 00:49:10,579 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-16 00:49:10,612 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-16 00:49:10,617 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-16 00:49:10,619 | __main__ | INFO | --- Starting Task 5: Recommendation System Execution ---
+2026-09-16 00:49:10,626 | __main__ | INFO | Searching optimal window for Day Type: 'Weekday' | Weather: 'Clear'
+2026-09-16 00:49:11,025 | __main__ | INFO | Generated Recommendation: For a weekday journey under clear weather, consider travelling between 19:00 and 20:00, when historical traffic volumes are typically at their lowest daytime level (avg. 3411 vehicles/hr).
+2026-09-16 00:49:11,025 | __main__ | INFO | --- Starting Task 5: Recommendation System Execution ---
+2026-09-16 00:49:11,026 | __main__ | INFO | Searching optimal window for Day Type: 'Weekday' | Weather: 'Rain'
+2026-09-16 00:49:11,066 | __main__ | INFO | Generated Recommendation: For a weekday journey under rain weather, consider travelling between 19:00 and 20:00, when historical traffic volumes are typically at their lowest daytime level (avg. 3256 vehicles/hr).
+2026-09-16 00:49:11,067 | __main__ | INFO | Task 5 completed successfully. Audit log saved to logs/recommendation_engine.log

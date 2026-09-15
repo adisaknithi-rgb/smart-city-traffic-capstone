@@ -1,0 +1,13 @@
+2026-09-16 01:12:03,710 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-16 01:12:04,239 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-16 01:12:04,302 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-16 01:12:04,304 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-16 01:12:04,365 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-16 01:12:04,375 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-16 01:12:04,377 | __main__ | INFO | --- Starting Task 7: Responsible and Sustainable AI Evaluation ---
+2026-09-16 01:12:04,384 | __main__ | INFO | Dataset Sampling Audit: Total records = 48184 | Rainy records = 3466 (7.19%)
+2026-09-16 01:12:04,384 | __main__ | WARNING | Coverage Limitation Detected: Rainy weather records represent only 7.19% of data. Model predictions under severe weather may suffer from elevated uncertainty.
+2026-09-16 01:12:04,410 | __main__ | INFO | Proxy Label Positivity Rate | Night Window (01-04): 0.00% | Peak Windows: 7.77%
+2026-09-16 01:12:04,410 | __main__ | WARNING | Disparity Warning: Extremely low proxy positive rate during night hours (0.00%). Risk of increased False Negatives during night-shift operational windows.
+2026-09-16 01:12:04,410 | __main__ | INFO | Clinical Governance Check: Human-in-the-loop (HITL) protocol required before real-world triage integration.
+2026-09-16 01:12:04,411 | __main__ | INFO | Sustainability Assessment: XGBoost tabular inference (~2ms/sample) prioritized over continuous Deep Learning retraining to minimize carbon footprint while preserving high Recall (97.87%%).

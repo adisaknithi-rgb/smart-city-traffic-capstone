@@ -1,0 +1,17 @@
+2026-09-16 01:03:37,815 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-16 01:03:38,290 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-16 01:03:38,365 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-16 01:03:38,368 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-16 01:03:38,449 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-16 01:03:38,456 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-16 01:03:38,458 | __main__ | INFO | --- Starting Task 6: MLOps and Deployment Simulation ---
+2026-09-16 01:03:51,533 | __main__ | INFO | Model v1.0.0 registered in MLflow Artifact Store. Run ID: 5ae435e5dde14aff8582cf16bf65612a
+2026-09-16 01:03:51,644 | __main__ | INFO | --- Testing FastAPI Endpoint (/predict) ---
+2026-09-16 01:03:51,813 | httpx | INFO | HTTP Request: POST http://testserver/predict "HTTP/1.1 200 OK"
+2026-09-16 01:03:51,813 | __main__ | INFO | API Response (Status 200): {'model_version': 'v1.0.0-xgboost', 'high_risk_prediction': 0, 'high_risk_probability': 0.094, 'status': 'PASS'}
+2026-09-16 01:03:51,813 | __main__ | INFO | --- Simulating Production Feature Drift ---
+2026-09-16 01:03:51,861 | __main__ | INFO | --- Running Feature Distribution Drift Analysis (KS-Test) ---
+2026-09-16 01:03:52,160 | __main__ | WARNING | Drift detected in feature 'rain_1h' (p-value: 0.0000)
+2026-09-16 01:03:52,400 | __main__ | WARNING | Drift detected in feature 'hour_sin' (p-value: 0.0381)
+2026-09-16 01:03:52,408 | __main__ | INFO | System Health Status: [ALERT / Requires investigation]
+2026-09-16 01:03:52,409 | __main__ | INFO | Drift Monitoring & Alerting Result: ALERT / Requires investigation

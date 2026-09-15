@@ -1,0 +1,11 @@
+2026-09-16 00:37:33,470 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-16 00:37:33,861 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-16 00:37:33,961 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-16 00:37:33,962 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-16 00:37:33,993 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-16 00:37:33,998 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-16 00:37:33,999 | __main__ | INFO | --- Starting Task 4: MLflow Experiment Tracking ---
+2026-09-16 00:38:52,326 | __main__ | INFO | Logging Run: Baseline Logistic Regression
+2026-09-16 00:39:42,350 | __main__ | INFO | Logged LogisticReg | Recall: 0.9289 | ROC-AUC: 0.9991
+2026-09-16 00:39:42,561 | __main__ | INFO | Logging Run: XGBoost Classifier
+2026-09-16 00:39:49,928 | __main__ | INFO | Logged XGBoost | Recall: 0.9787 | ROC-AUC: 0.9998

@@ -1,0 +1,17 @@
+2026-09-15 23:22:45,369 | __main__ | INFO | Starting Supervised Models Execution Trail...
+2026-09-15 23:22:45,370 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-15 23:22:45,628 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-15 23:22:45,670 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-15 23:22:45,671 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-15 23:22:45,700 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-15 23:22:45,705 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-15 23:22:45,706 | __main__ | INFO | Initiating Supervised Model Training (Task 1)...
+2026-09-15 23:22:45,711 | __main__ | INFO | Selected 29 feature columns for training.
+2026-09-15 23:22:45,774 | __main__ | INFO | Data split complete: Train=38547, Test=9637
+2026-09-15 23:22:45,774 | __main__ | INFO | --- Training Regression Models ---
+2026-09-15 23:22:45,798 | __main__ | INFO | Baseline Ridge Regressor | MAE: 437.84 | R2: 0.8952
+2026-09-15 23:22:46,280 | __main__ | INFO | XGBoost Regressor        | MAE: 174.56 | R2: 0.9786
+2026-09-15 23:22:46,280 | __main__ | INFO | --- Training Classification Models ---
+2026-09-15 23:22:46,546 | __main__ | INFO | Baseline Logistic Reg | Accuracy: 0.9938 | Recall: 0.9289 | ROC-AUC: 0.9991
+2026-09-15 23:22:47,113 | __main__ | INFO | XGBoost Classifier     | Accuracy: 0.9975 | Recall: 0.9787 | ROC-AUC: 0.9998
+2026-09-15 23:22:47,117 | __main__ | INFO | Supervised Model Training completed successfully. Log saved to logs/supervised_models.log

@@ -1,0 +1,25 @@
+2026-09-16 00:26:21,221 | src.data_processing | INFO | Loading dataset from data/featured_traffic_data.csv
+2026-09-16 00:26:25,899 | src.data_processing | INFO | Adding time-based and cyclical encodings (sin/cos)...
+2026-09-16 00:26:27,822 | src.data_processing | INFO | Cyclical features added: hour_sin, hour_cos, day_sin, day_cos
+2026-09-16 00:26:27,822 | src.data_processing | INFO | Starting proxy accident-risk label construction...
+2026-09-16 00:26:28,180 | src.data_processing | INFO | Congestion categories generated using Q1=1192.0, Q2=3378.5, Q3=4933.0
+2026-09-16 00:26:30,012 | src.data_processing | INFO | Proxy label successfully generated: 2108 high_risk records (4.37%)
+2026-09-16 00:26:30,014 | __main__ | INFO | --- Starting Task 3: Deep Learning (LSTM) & SHAP Explainability ---
+2026-09-16 00:26:54,570 | __main__ | INFO | Training LSTM Model for 38542 sequences...
+2026-09-16 00:26:59,195 | __main__ | INFO | Epoch 2/10 | Loss (MSE): 14594123.0000
+2026-09-16 00:26:59,955 | __main__ | INFO | Epoch 4/10 | Loss (MSE): 14592379.0000
+2026-09-16 00:27:00,666 | __main__ | INFO | Epoch 6/10 | Loss (MSE): 14589539.0000
+2026-09-16 00:27:01,470 | __main__ | INFO | Epoch 8/10 | Loss (MSE): 14584533.0000
+2026-09-16 00:27:02,176 | __main__ | INFO | Epoch 10/10 | Loss (MSE): 14577041.0000
+2026-09-16 00:27:02,661 | __main__ | INFO | LSTM Test MAE: 3252.68
+2026-09-16 00:27:02,661 | __main__ | INFO | --- Computing SHAP Explainability on Baseline Tree Model ---
+2026-09-16 00:27:04,056 | __main__ | INFO | Top Feature Importances (SHAP Attributions):
+   Feature  Mean_|SHAP|
+  hour_cos  1591.507568
+  hour_sin   575.042358
+   day_sin   367.165741
+      temp    83.477280
+   day_cos    70.954750
+clouds_all    50.940353
+   rain_1h     8.237693
+   snow_1h     0.606220
